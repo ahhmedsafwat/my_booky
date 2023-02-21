@@ -17,12 +17,10 @@ class FeaturedListViewItem extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             color: Colors.red,
-            image: const DecorationImage(
-              image: AssetImage(
-                LocAssets.testImage,
-              ),
-              fit: BoxFit.fill,
-            ),
+          ),
+          child: Image.asset(
+            LocAssets.testImage,
+            fit: BoxFit.fill,
           ),
         ),
       ),
