@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:my_bookly/Features/home/Presentation/views/view_model/widgets/custom_app_bar.dart';
 import 'package:my_bookly/Features/home/Presentation/views/view_model/widgets/feature_list_view_item.dart';
+import 'package:my_bookly/constent.dart';
 import 'package:my_bookly/core/utils/assets.dart';
 import 'package:my_bookly/core/utils/style.dart';
 
@@ -21,7 +23,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           Text(
             'Best Seller',
-            style: Style.titleMedium,
+            style: Style.textStyle18,
           ),
           BestSellerListViewItem(),
         ],
@@ -51,7 +53,7 @@ class BestSellerListViewItem extends StatelessWidget {
             ),
           ),
           Column(
-            children: [],
+            children: const [],
           )
         ],
       ),
