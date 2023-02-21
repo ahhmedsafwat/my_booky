@@ -28,12 +28,13 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  cached_network_image: ^3.2.3
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.4.0
   get: ^4.6.5
-  cached_network_image: ^3.2.3
+  google_fonts: ^4.0.3
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -61,7 +62,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
-  #   - family: Schyler
+  # - family:
+  #   font:
+  #     - asset: assets/fonts/GT Sectra Fine Regular.ttf
+  # - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
