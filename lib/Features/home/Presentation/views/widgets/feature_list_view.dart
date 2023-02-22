@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:my_bookly/Features/home/Presentation/views/widgets/feature_item.dart';
+import 'package:my_bookly/Features/home/Presentation/views/widgets/custom_book_item.dart';
 import 'package:my_bookly/core/utils/app_route.dart';
 
 class FeatureBookLIstView extends StatelessWidget {
@@ -9,9 +9,9 @@ class FeatureBookLIstView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        GoRouter.of(context).push(AppRoute.bookDetailsView);
-      },
+      // onTap: () {
+      //   GoRouter.of(context).push(AppRoute.bookDetailsView);
+      // },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: SizedBox(
@@ -21,7 +21,7 @@ class FeatureBookLIstView extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) => const Padding(
               padding: EdgeInsets.only(right: 16.0),
-              child: FeaturedListViewItem(),
+              child: CustomBookItem(),
             ),
           ),
         ),
