@@ -3,29 +3,38 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_bookly/core/utils/style.dart';
 
 class BooksRating extends StatelessWidget {
-  const BooksRating({super.key});
+  const BooksRating(
+      {super.key, this.mainAxisAlignment = MainAxisAlignment.start});
+
+  final MainAxisAlignment mainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
-        const Icon(
+      mainAxisAlignment: mainAxisAlignment,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        Icon(
           FontAwesomeIcons.solidStar,
           color: Color(0xffffdd4f),
+          size: 16,
         ),
-        const SizedBox(
+        SizedBox(
           width: 6.3,
         ),
-        const Text(
+        Text(
           '4.8',
           style: Style.textStyle16,
         ),
-        const SizedBox(
+        SizedBox(
           width: 5,
         ),
-        Text(
-          '(2590)',
-          style: Style.textStyle14.copyWith(color: const Color(0xff707070)),
+        Opacity(
+          opacity: .5,
+          child: Text(
+            '(2590)',
+            style: Style.textStyle14,
+          ),
         )
       ],
     );
