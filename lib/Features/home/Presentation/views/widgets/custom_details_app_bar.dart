@@ -7,14 +7,14 @@ class CustomDetailsAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
+      children: [
         IconButton(
-          onPressed: null,
-          icon: Icon(Icons.close),
+          onPressed: () {},
+          icon: const Icon(Icons.close),
         ),
         IconButton(
-          onPressed: null,
-          icon: Icon(Icons.shopping_cart_outlined),
+          onPressed: () {},
+          icon: const Icon(Icons.shopping_cart_outlined),
         )
       ],
     );
