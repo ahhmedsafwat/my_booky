@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/widget/cutom_button.dart';
+import '../../../../../core/widgets/cutom_button.dart';
 
 class BookAction extends StatelessWidget {
   const BookAction({super.key});
