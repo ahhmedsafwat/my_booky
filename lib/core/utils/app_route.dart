@@ -2,7 +2,6 @@ import 'package:go_router/go_router.dart';
 import 'package:my_bookly/Features/home/Presentation/views/book_details_view.dart';
 import 'package:my_bookly/Features/home/Presentation/views/home_view.dart';
 import 'package:my_bookly/Features/search/presentation/views/search_view.dart';
-import 'package:my_bookly/Features/search/presentation/views/search_view.dart';
 import '../../Features/Splash/Presentation/splash_view.dart';
 
 abstract class AppRoute {
