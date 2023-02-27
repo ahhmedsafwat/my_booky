@@ -14,7 +14,10 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .2),
-          child: const CustomBookItem(),
+          child: const CustomBookItem(
+            imageUrl:
+                'http://bookcoverarchive.com/wp-content/uploads/2009/01/the_procedure.large_.jpg.png',
+          ),
         ),
         const SizedBox(
           height: 40,
