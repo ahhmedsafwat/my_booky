@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_bookly/Features/home/Presentation/views/manager/featured_books_cubit/feature_books_cubit.dart';
 import 'package:my_bookly/Features/home/Presentation/views/widgets/custom_book_item.dart';
 
+import '../../../../../core/utils/app_route.dart';
 import 'custom_error.dart';
 import 'custom_loading_indecator.dart';
 
-class FeatureBookLIstView extends StatelessWidget {
-  const FeatureBookLIstView({super.key});
+class FeatureBookListView extends StatelessWidget {
+  const FeatureBookListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +21,20 @@ class FeatureBookLIstView extends StatelessWidget {
             child: SizedBox(
               height: MediaQuery.of(context).size.height * .3,
               child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
                 itemCount: state.books.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.only(right: 16.0),
-                  child: CustomBookItem(
-                    imageUrl:
-                        state.books[index].volumeInfo.imageLinks.thumbnail,
+                  child: GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).push(AppRoute.bookDetailsView);
+                    },
+                    child: CustomBookItem(
+                      imageUrl:
+                          state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                              '',
+                    ),
                   ),
                 ),
               ),

@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_bookly/Features/home/Presentation/views/widgets/custom_loading_indecator.dart';
+import 'package:my_bookly/core/utils/app_route.dart';
 
 class CustomBookItem extends StatelessWidget {
   const CustomBookItem({super.key, required this.imageUrl});
