@@ -4,35 +4,41 @@ import 'package:my_bookly/core/utils/style.dart';
 
 class BooksRating extends StatelessWidget {
   const BooksRating(
-      {super.key, this.mainAxisAlignment = MainAxisAlignment.start});
+      {super.key,
+      this.mainAxisAlignment = MainAxisAlignment.start,
+      required this.rating,
+      required this.downCount});
 
   final MainAxisAlignment mainAxisAlignment;
+
+  final int rating;
+  final int downCount;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        Icon(
+      children: [
+        const Icon(
           FontAwesomeIcons.solidStar,
           color: Color(0xffffdd4f),
           size: 16,
         ),
-        SizedBox(
+        const SizedBox(
           width: 6.3,
         ),
         Text(
-          '4.8',
+          rating.toString(),
           style: Style.textStyle16,
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         Opacity(
           opacity: .5,
           child: Text(
-            '(2590)',
+            '($downCount)',
             style: Style.textStyle14,
           ),
         )
