@@ -1,26 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_bookly/Features/home/Presentation/views/manager/featured_books_cubit/feature_books_cubit.dart';
 import 'package:my_bookly/Features/home/Presentation/views/widgets/custom_book_item.dart';
+
+import 'custom_error.dart';
+import 'custom_loading_indecator.dart';
 
 class FeatureBookLIstView extends StatelessWidget {
   const FeatureBookLIstView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height * .3,
-          child: ListView.builder(
-            itemCount: 10,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) => const Padding(
-              padding: EdgeInsets.only(right: 16.0),
-              child: CustomBookItem(),
+    return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
+      builder: (context, state) {
+        if (state is FeaturedBooksSuccess) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * .3,
+              child: ListView.builder(
+                itemCount: 10,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => const Padding(
+                  padding: EdgeInsets.only(right: 16.0),
+                  child: CustomBookItem(),
+                ),
+              ),
             ),
-          ),
-        ),
-      ),
+          );
+        } else if (state is FeaturedBooksFailure) {
+          return CustomError(
+            errMessage: state.errMessage,
+          );
+        } else {
+          return const CustomLoadingIndicator();
+        }
+      },
     );
   }
 }
