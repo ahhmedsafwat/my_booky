@@ -17,15 +17,16 @@ class BooksListView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .15,
             child: ListView.builder(
+              itemCount: state.book.length,
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: CustomBookItem(
-                    imageUrl:
-                        'http://bookcoverarchive.com/wp-content/uploads/2009/01/the_procedure.large_.jpg.png',
-                  ),
+                      imageUrl:
+                          state.book[index].volumeInfo.imageLinks?.thumbnail ??
+                              ''),
                 );
               },
             ),

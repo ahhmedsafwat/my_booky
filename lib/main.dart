@@ -6,10 +6,12 @@ import 'package:my_bookly/Features/home/data/repos/home_repo_implementation.dart
 import 'package:my_bookly/constent.dart';
 import 'package:my_bookly/core/utils/app_route.dart';
 import 'package:my_bookly/core/utils/service_locator.dart';
+import 'package:my_bookly/simple_bloc_observer.dart';
 import 'Features/home/Presentation/views/manager/newest_books_cubit/newest_books_cubit.dart';
 
 void main(List<String> args) {
   setUp();
+  Bloc.observer = SimpleBlocObserver();
   runApp(const BooklyApp());
 }
 

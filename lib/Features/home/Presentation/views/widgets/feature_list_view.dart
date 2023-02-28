@@ -30,7 +30,7 @@ class FeatureBookListView extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () {
                       GoRouter.of(context).push(AppRoute.bookDetailsView,
-                          extra: state.books[index].volumeInfo.categories);
+                          extra: state.books[index]);
                     },
                     child: CustomBookItem(
                       imageUrl:
